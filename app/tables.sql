@@ -1,0 +1,5 @@
+-- Table TODO
+CREATE TABLE TODO (
+    id_todo INT PRIMARY KEY AUTO_INCREMENT,
+    libelle VARCHAR(255)
+);

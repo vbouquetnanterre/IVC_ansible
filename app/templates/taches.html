@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tâches de l'utilisateur</title>
+</head>
+
+<body>
+    <h1>Voici vos tâches:</h1>
+    <form action="/enregistrer_tache" method="post">
+        <label for="nom_tache">Nouvelle tâche :</label> <input type="text" id="nom_tache" name="nom_tache" autofocus>
+        <input type="submit" value="+">
+    </form>
+    <ul>
+        {% for tache in taches %}
+            <li>
+                <form action="/supprimer_tache" method="post" style="display: inline;">
+                    <input type="hidden" name="id_tache" value="{{ tache[0] }}">
+                    {{ tache[1] }}
+                    <input type="submit" value="-">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

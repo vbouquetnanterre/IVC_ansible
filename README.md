@@ -1,6 +1,6 @@
 # Gestion de configuration avec ansible
 
-Ce document est accompagné d'un atelier qui est disponible sur coursenligne [https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-0](https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-5)
+Ce document est accompagné d'un atelier qui est disponible sur coursenligne [https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-5](https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-5)
 
 ## Configurations nécessaires pour les exercices
 
@@ -59,19 +59,19 @@ ansible-playbook -i hosts install_docker_podman.yml
 
 ## Préambule aux exercices
 
-Vous devez faire un fork du répertoire qui est herbégée sur github à l'adresse suivante: [https://github.com/vbouquetnanterre/IVC_TP_ansible](https://github.com/vbouquetnanterre/IVC_TP_ansible)
+Vous devez faire un fork du dépôt qui est herbégée sur github à l'adresse suivante: [https://github.com/vbouquetnanterre/IVC_ansible](https://github.com/vbouquetnanterre/IVC_ansible)
 
-Vous devez ensuite mettre votre répertoire en privé.
+Vous devez ensuite mettre votre dépôt en privé.
 
 ## Exercice 1:
 
-Créer un `playbook` afin d'enregistrer le nom d'utilisateur github et le mot de passe sur la machine virtuelle déployée avec vagrant. Pour le mot de passe, vous devez générer un token depuis le site github. Voici un lien de la documentation expliquant la procédure afin de générer un token [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+Créez un `playbook` afin d'enregistrer le nom d'utilisateur github et le mot de passe sur la machine virtuelle déployée avec vagrant. Pour le mot de passe, vous devez générer un token depuis le site github. Voici un lien de la documentation expliquant la procédure afin de générer un token [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 Pour enregistrer le nom d'utilisateur et le token vous pouvez configurer un fichier .gitconfig et .git-credentials qui doit être placé dans le home. Pour générer ces fichiers, utilisez le `prompt` d'ansible, le module de `copy` et le module de `template` (utilisant jinja). Voici le lien de la documentation sur le stockage des données d'authentification avec git: [https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)
 
 ## Exercice 2
 
-Créer un `playbook afin de cloner ou de mettre à jour votre dépôt privé sur la machine virtuelle déployée avec vagrant.
+Créez un `playbook` afin de cloner ou de mettre à jour votre dépôt privé sur la machine virtuelle déployée avec vagrant.
 
 ## Exercice 3
 
@@ -79,23 +79,23 @@ Parcourez l'application et identifiez les différents services. Proposez une sol
 
 ## Exercice 4
 
-Créer un `playbook` afin de construire les images des conteneurs. Note: selon les versions d'ansible, il est possible que le module `community.docker`ne fonctionne pas correctement. Dans ce cas, vous pouvez utilisez le module `ansible.builtin.shell` afin d'exécuter directement les commandes avec le docker client.
+Créez un `playbook` afin de construire les images des conteneurs. Note: selon les versions d'ansible, il est possible que le module `community.docker`ne fonctionne pas correctement. Dans ce cas, vous pouvez utilisez le module `ansible.builtin.shell` afin d'exécuter directement les commandes avec le docker client.
 
 ## Exercice 5
 
-Créer un `playbook` afin d'exécuter les conteneurs. Vérifiez ensuite que l'application fonctionne correctement en accédant à l'url localhost:PORT (selon le port que vous avez choisi, par défaut celui-ci est 5000 pour flask).
+Créez un `playbook` afin d'exécuter les conteneurs. Vérifiez ensuite que l'application fonctionne correctement en accédant à l'url localhost:PORT (selon le port que vous avez choisi, par défaut, celui-ci est 5000 pour flask).
 
 ## Exercice 6
 
-Proposez une solution afin de rendre la base de données persistante et modifier les fichiers nécessaires. Créer ensuite un `playbook` afin de sauvegarder la base de données toutes les heures. Pour cela, vous pouvez utiliser le module `ansible.builtin.cron`.
+Proposez une solution afin de rendre la base de données persistante et modifiez les fichiers nécessaires. Créez ensuite un `playbook` afin de sauvegarder la base de données toutes les heures. Pour cela, vous pouvez utiliser le module `ansible.builtin.cron`.
 
 ## Exercice 7
 
-Créer un `playbook` afin d'installer nginx pour servir des pages statiques (html, css, png, pdf, etc.) qui seront présents dans le dossier `/www/data` à l'url `localhost:8081`. Vous pourrez ajouter les fichiers que vous souhaitez dans ce dossier.
+Créez un `playbook` afin d'installer nginx pour servir des pages statiques (html, css, png, pdf, etc.) qui seront présents dans le dossier `/www/data` à l'url `localhost:8081`. Vous pourrez ajouter les fichiers que vous souhaitez dans ce dossier. Essayez d'accéder à vos fichiers depuis le navigateur avec l'adresse `localhost:8081/nom_dun_fichier.ext`.
 
 ## Exercice 8
 
-Créer un ou plusieurs `playbooks` afin d'exécuter les services comme si l'application était en production. Cela comprend l'utilisation de `tls/ssl` pour le chiffrement afin de pouvoir utiliser `https` mais aussi la sécurisation des informations d'authentification des différents services.
+Créez un ou plusieurs `playbooks` afin d'exécuter les services comme si l'application était en production. Cela comprend l'utilisation de `tls/ssl` pour le chiffrement afin de pouvoir utiliser `https` mais aussi la sécurisation des informations d'authentification des différents services.
 
 ## Exercice 9
 

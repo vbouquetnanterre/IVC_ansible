@@ -1,0 +1,12 @@
+---
+- name: Création d'un fichier toto
+  hosts: all
+  become: false
+  tasks:
+    - name: Créer le fichier toto.txt
+      ansible.builtin.file:
+        path: /home/<utilisateur>/toto.txt
+        state: touch
+        owner: <utilisateur>
+        group: <utilisateur>
+        mode: '0644'

@@ -17,18 +17,6 @@ Vous pouvez télécharger sur coursenligne les dépendances nécessaire pour ré
 - un fichier `ansible.cfg` qui indiquera, notamment, l'utilisateur et sa clef privée permettant à ansible de se connecter à la machine virtuelle avec ssh
 - un fichier `install_docker_podman.yaml` qui est un "playbook" ansible afin d'installer les dépendances nécessaires pour utiliser des conteneurs (docker, podman)
 
-### Si vous travaillez dans une machine virtuelle déployée avec Virtualbox
-
-Référez-vous au TP chroot pour le partage de dossier (si vous en avez besoin), la sélection de l'iso et la redirection de ports. Il faudra notamment rediriger le 22 de l'invité vers le port 2222 de l'hôte.
-
-Voici les commandes à exécuter dans la machine virtuelle déployée avec virtualbox:
-```bash
-sudo su
-cd /mnt/
-# Si vous souhaitez configurer un répertoire partagé, cf. tp chroot
-mkdir -p partage && sudo mount -t vboxsf partage partage
-```
-
 ### Configuration de ssh et du root
 Pour permettre à ansible d'exécuter des tâches dans la machine virtuelle, nous devons configurer l'accès à ssh. Pour cela, nous allons: générer une clef publique et une clef privée afin de permettre la connexion à ssh sans saisir un mot de passe. Pour cela, nous devons enregistrer la clef publique dans la fichier de configuration ssh de l'utilisateur de la machine virtuelle.
 
@@ -69,7 +57,7 @@ Il sera aussi nécessaire pour ce TP de permettre à ansible d'exécuter des com
 # Vérifier si votre utilisateur a les droits sudo
 # Machine invitée
 sudo -l -U <utilisateur_vm>
-# Vous devirez voir afficher: (ALL) ALL à la fin du retour de la commande
+# Vous devriez voir afficher: (ALL) ALL à la fin du retour de la commande
 
 # Si l'utilisateur n'a pas les droits sudo
 groups <utilisateur_vm>
@@ -77,7 +65,7 @@ sudo usermod -aG Wheel <utilisateur_vm>
 # Se déconnecter et se reconnecter
 ```
 
-Afin qu'ansible n'est pas à saisir de mot de passe pour exécuter des commandes en tant que sudo:
+Afin qu'ansible n'ait pas à saisir de mot de passe pour exécuter des commandes en tant que sudo:
 
 ```bash
 # Machine invitée
@@ -87,14 +75,6 @@ sudo visudo
 # <utilisateur_vm> ALL=(ALL) NOPASSWD: ALL
 
 # L'éditeur est vim. Vous savez normalement comment sauvegarder un fichier et quitter l'éditeur
-```
-
-### Ansible, installation des dépendances
-
-Pour construire et exécuter des conteneurs sur la machine virtuelle déployée avec vagrant, vous diposez d'un "playbook" `install_docker_podman.yml`. Vous pouvez exécuter celui-ci avec la commande suivante:
-
-```bash
-ansible-playbook -i hosts install_docker_podman.yml
 ```
 
 ## Préambule aux exercices

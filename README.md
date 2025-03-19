@@ -36,7 +36,7 @@ ssh-copy-id -i id_rsa_ansible.pub -p 2222 <utilisateur_vm>@localhost
 # Hote: vérifions que ça fonctionne, normalement aucun mot de passe ne vous sera demandé
 ssh -p 2222 <utilisateur_vm>@localhost
 
-# Ajouter le chemin du la clef privé au fichier ansible.fg
+# Ajouter le chemin du la clef privé au fichier ansible.cfg
 # private_key_file = /home/<utilisateur_hote>/.ssh/id_rsa_ansible # chemin de la clef privée sur votre machine:
 
 # Tester ansible depuis le répertoire playbooks du dépôt git

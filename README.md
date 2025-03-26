@@ -85,7 +85,7 @@ Vous devez ensuite mettre votre dépôt en privé.
 
 ## Exercice 1:
 
-Créez un `playbook` afin d'enregistrer le nom d'utilisateur github et le mot de passe sur la machine virtuelle déployée avec vagrant. Pour le mot de passe, vous devez générer un token depuis le site github. Voici un lien de la documentation expliquant la procédure afin de générer un token [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+Créez un `playbook` afin d'enregistrer le nom d'utilisateur github et le mot de passe sur la machine virtuelle. Pour le mot de passe, vous devez générer un token depuis le site github. Voici un lien de la documentation expliquant la procédure afin de générer un token [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 Pour enregistrer le nom d'utilisateur et le token vous pouvez configurer un fichier .gitconfig et .git-credentials qui doit être placé dans le home. Pour générer ces fichiers, utilisez le `prompt` d'ansible, le module de `copy` et le module de `template` (utilisant jinja). Voici le lien de la documentation sur le stockage des données d'authentification avec git: [https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)
 

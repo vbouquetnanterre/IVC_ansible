@@ -51,7 +51,7 @@ ansible -i hosts serveurs -m ping
 # }
 ```
 
-Il sera aussi nécessaire pour ce TP de permettre à ansible d'exécuter des commandes en tant que root sur la machine invitée. Puisqu'elle se connecter avec l'utilisateur <utilisateur_vm>, il faut que celui-ci est les droits.
+Il sera aussi nécessaire pour ce TP de permettre à ansible d'exécuter des commandes en tant que root sur la machine invitée. Puisqu'elle se connecter avec l'utilisateur <utilisateur_vm>, il faut que celui-ci ait les droits.
 
 ```bash
 # Vérifier si votre utilisateur a les droits sudo

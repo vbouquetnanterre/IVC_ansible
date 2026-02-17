@@ -2,7 +2,7 @@
 
 ## Configurations nécessaires pour les exercices
 
-Il est nécessaire, sur le système d'exploitation que vous utilisez, que soit installé:
+Il est nécessaire, sur votre système d'exploitation hôte que vous utilisez, que soit installé:
 
 <!-- - vagrant [https://www.vagrantup.com/](https://www.vagrantup.com/) -->
 - ansible [https://docs.ansible.com/](https://docs.ansible.com/). Nous vous recommandons d'installer aussi `ansible-lint` permettant l'analyse statique de fichier de configuration ansible. Voici la commande pour l'installer: `pip3 install ansible-lint`. Si vous utilisez vscode, vous pouvez installer l'extension "ansible" de Red Hat afin de permettre le support du language utilisé dans les fichiers de configuration ansible. Il est aussi possible d'installer le module docker afin de construire et déployer des conteneurs sur la machine invitée. Voici la commande pour le faire: `ansible-galaxy collection install community.docker:2.7.9`

@@ -1,7 +1,5 @@
 # Gestion de configuration avec ansible
 
-Ce document est accompagné d'un atelier qui est disponible sur coursenligne [https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-5](https://coursenligne.parisnanterre.fr/course/view.php?id=8175#section-5)
-
 ## Configurations nécessaires pour les exercices
 
 Il est nécessaire, sur le système d'exploitation que vous utilisez, que soit installé:
